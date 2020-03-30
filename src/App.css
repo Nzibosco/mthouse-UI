@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+#home-card {
+  width: 50%; 
+  margin: auto;
+  border-radius: 25px;
+}
+
+#home-div {
+height: 100%;
+padding-top: 20%;
+}
+
+.nav-item {
+  padding: 10px;
+}
+
+.member-account {
+  float: right;
+  padding: 10px;
+  border-radius: 45%;
+  border-style: solid;
+  border-color: khaki;
+}
