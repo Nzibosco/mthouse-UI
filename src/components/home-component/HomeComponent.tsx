@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../../utils/card/Card'
 import MyModal from '../../utils/model/Modal'
 import { Link } from 'react-router-dom'
+import LoginForm from '../login-component/LoginComponent'
 
 
 export class HomeComponent extends React.Component<any, any>{
@@ -15,14 +16,16 @@ export class HomeComponent extends React.Component<any, any>{
                     <MyModal
                     modalBtn = 'Sign in'
                     title = 'Enter your credentials to login'
+                    body = {<LoginForm/>}
                     />
                     <br/>
                     <small style = {{fontStyle: "italic", color: "red"}}>This portal is for MT House authorized members only. Illegal access would amount to legal actions</small>
                 </Card>
             </div>
             <br/>
-            <br/><br/> <br/> <br/> <br/>
+            <br/><br/> <br/> <br/>
             <div className = "footer text-center" style = {{}}>
+                <small>Application developed by: ....</small>
                 <small><a target = "_blank" href = "https://bosconzeyi.com"> &copy; Bosco Nzeyi</a></small>
             </div>
             </div>

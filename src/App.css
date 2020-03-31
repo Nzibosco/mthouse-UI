@@ -59,3 +59,7 @@ padding-top: 20%;
   border-style: solid;
   border-color: khaki;
 }
+
+#nav-list {
+  padding-left: 20%;
+}

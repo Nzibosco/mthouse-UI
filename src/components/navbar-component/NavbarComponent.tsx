@@ -32,7 +32,7 @@ export class NavbarComponent extends React.Component<INavProps, any> {
                 <nav className="navbar navbar-expand-lg navbar-light justify-content-center">
 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
+                        <ul className="navbar-nav mr-auto" id = "nav-list">
                         <li className = "nav-item">
                             <Link to="">Members</Link></li>
                         <li className = "nav-item">
