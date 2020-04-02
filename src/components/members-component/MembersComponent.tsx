@@ -15,12 +15,12 @@ export class MembersComponent extends React.Component<IMembersProps, any> {
                     <table>
                         <thead>
                             <tr>
-                                <td>Id</td>
-                                <td>Names</td>
-                                <td>Email</td>
-                                <td>Phone</td>
-                                <td>Address</td>
-                                <td>Contribution balance</td>
+                                <th>Id</th>
+                                <th>Names</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>Contribution balance</th>
                             </tr>
                         </thead>
                         <tbody>
