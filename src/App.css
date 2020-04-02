@@ -45,7 +45,7 @@
 
 #home-div {
 height: 100%;
-padding-top: 20%;
+padding-top: 15%;
 }
 
 .nav-item {
@@ -62,4 +62,16 @@ padding-top: 20%;
 
 #nav-list {
   padding-left: 20%;
+}
+
+#register {
+  padding-left: 70%;
+}
+
+#register-jumbotron {
+  margin: auto;
+}
+
+#login, #logout {
+  padding-left: 10px;
 }

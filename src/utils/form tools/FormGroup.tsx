@@ -2,7 +2,7 @@ import React from 'react'
 
 const FormGroup = (props:any) => {
     return (
-        <div className = "form-group">
+        <div className = {"form-group " + props.size } >
             {props.children}
         </div>
     )
