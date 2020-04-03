@@ -3,7 +3,6 @@ import Card from '../../utils/card/Card'
 import MyModal from '../../utils/model/Modal'
 import { Link } from 'react-router-dom'
 import LoginForm from '../login-component/LoginComponent'
-import Button from '../../utils/form tools/Button'
 
 
 export class HomeComponent extends React.Component<any, any>{
@@ -20,8 +19,7 @@ export class HomeComponent extends React.Component<any, any>{
                     body = {<LoginForm/>}
                     />
                     <br/>
-                    <small>No Account yet? </small> <br/>
-                    <Link to= '/register'><Button btnName = 'Register'/></Link>
+                    <p>No Account yet? Click <Link to= '/register'>here to register</Link></p>
                     <br/>
                     <small style = {{fontStyle: "italic", color: "red"}}>This portal is for MT House authorized members only. Illegal access would amount to legal actions</small>
                 </Card>
