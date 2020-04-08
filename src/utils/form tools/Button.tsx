@@ -7,6 +7,7 @@ const Button = (props:any) => {
     id = {props.id} 
     className = {props.cName? props.cName + ' ' + props.size: 'btn btn-primary'}
     onClick = {props.handleClick}
+    disabled = {props.disabled}
     >
     {props.btnName}
     </button>

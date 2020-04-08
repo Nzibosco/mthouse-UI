@@ -34,4 +34,4 @@ export class HomeComponent extends React.Component<any, any>{
             </div>
         )
     }
-}
+}   

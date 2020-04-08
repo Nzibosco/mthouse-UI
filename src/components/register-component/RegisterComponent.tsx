@@ -7,8 +7,11 @@ import FormGroup from '../../utils/form tools/FormGroup'
 import Button from '../../utils/form tools/Button'
 import FormRow from '../../utils/form tools/FormRow'
 
+interface IMemberProps {
+    register: (member:any) => void
+}
 
-export class RegisterComponent extends React.Component<any, any> {
+export class RegisterComponent extends React.Component<IMemberProps, any> {
     constructor(props: any) {
         super(props)
         this.state = {
@@ -41,6 +44,33 @@ export class RegisterComponent extends React.Component<any, any> {
     }
 
     handleSubmit = () => {
+
+        let member = {
+            first_name: this.state.fname,
+            last_name: this.state.lname,
+            email: this.state.email,
+            phone: this.state.phone,
+            address: this.state.address,
+            password: this.state.password,
+            member_role: this.state.role,
+            initial_contribution: this.state.contribution
+        }; 
+
+        this.props.register(member);
+
+        // clearing the form after submit
+        this.setState({
+            ... this.state,
+            fname: '',
+            lname: '',
+            email: '',
+            phone: '',
+            address: '',
+            password: '',
+            role: '',
+            contribution: ''
+
+        })
 
     }
 
@@ -166,7 +196,9 @@ export class RegisterComponent extends React.Component<any, any> {
                         <Button 
                         btnName = 'Register' 
                         btnType = 'button' 
-                        handleClick = {this.handleSubmit}/>
+                        handleClick = {this.handleSubmit}
+                        disabled= {!this.state.fname || !this.state.lname || !this.state.email || !this.state.phone || !this.state.password}
+                        />
                     </Form>
                 </Jumbotron>
             </div>
