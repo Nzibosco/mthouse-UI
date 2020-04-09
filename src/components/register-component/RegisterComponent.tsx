@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom';
 import Jumbotron from '../../utils/jumbotron/Jumbotron'
 import Form from '../../utils/form tools/Form'
 import Label from '../../utils/form tools/Label'
@@ -24,8 +25,13 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
             password: '',
             role: '',
             contribution: 0
+           
 
         }
+    }
+
+    componentDidMount = () => {
+       ReactDOM.render(<></>, document.getElementById('register-message'))
     }
 
     handleChange = (event:any) => {
@@ -201,7 +207,7 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
                         />
                     </Form>
                     <br/>
-                    <h4 className = 'text-danger'>{this.props.registerMessage}</h4>
+                    <h4 className = 'text-danger' id = 'register-message'>{this.props.registerMessage}</h4>
                 </Jumbotron>
             </div>
         )
