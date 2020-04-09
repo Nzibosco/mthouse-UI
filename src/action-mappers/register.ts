@@ -1,4 +1,4 @@
-import {registerAPI} from '../utils/API/baseUrls';
+import { registerAPI } from '../utils/API/baseUrls';
 
 export const registerTypes = {
     SUCCESS_REGISTRATION_SUCCESSFULL: 'SUCCESSFULL_REGISTRATION',
@@ -6,10 +6,10 @@ export const registerTypes = {
 
 }
 
-export const register =  (member:any) => async (dispatch:any) => {
+export const register = (member: any) => async (dispatch: any) => {
 
-    registerAPI.post('',member).then(res => {
-        if(res.status === 200){
+    registerAPI.post('', member).then(res => {
+        if (res.status === 200) {
             console.log(res.data);
             dispatch({
                 type: registerTypes.SUCCESS_REGISTRATION_SUCCESSFULL,
@@ -25,12 +25,12 @@ export const register =  (member:any) => async (dispatch:any) => {
                     registerMessage: 'Registration failed. Try again soon'
                 }
             })
-            
+
         }
     }).catch(err => {
         console.log('Register API failed');
         console.log(err);
-        
+
         dispatch({
             type: registerTypes.FAIL_REGISTRATION_FAIL,
             payload: {
