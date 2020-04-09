@@ -1,11 +1,49 @@
 import React from 'react'
 import Card from '../../utils/card/Card'
-import MyModal from '../../utils/model/Modal'
 import { Link } from 'react-router-dom'
 import LoginForm from '../login-component/LoginComponent'
+import LoginModal from '../login-component/LoginComponent'
 
+interface IHomeProps {
+    loginMessage: string,
+    login: (credentials:any) => void
+}
 
-export class HomeComponent extends React.Component<any, any>{
+export class HomeComponent extends React.Component<IHomeProps, any>{
+
+    constructor(props:any){
+        super(props)
+
+        this.state = {
+            email: '',
+            passsword: ''
+        }
+    }
+
+    handleChange = (event:any) => {
+        event.preventDefault();
+
+        const {name, value} = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleSubmit = () => {
+        let creds = {
+            email: this.state.email,
+            passsword: this.state.password
+        }
+
+        this.props.login(creds);
+
+        // clear the form after submitting
+        this.setState({
+            ...this.state,
+            email: '',
+            password: ''
+        })
+    }
 
     render(){
         return(
@@ -13,10 +51,12 @@ export class HomeComponent extends React.Component<any, any>{
             <div className = 'row bg-dark' id = 'home-div'>
                 <Card cardTitle = '' cardId = 'home-card' cardProperties = "text-center">
                     <h2>MT House Members Portal</h2>
-                    <MyModal
-                    modalBtn = 'Sign in'
-                    title = 'Enter your credentials to login'
-                    body = {<LoginForm/>}
+                    <LoginModal
+                    emailValue = {this.state.email}
+                    passwordValue = {this.state.password}
+                    handleChange = {this.handleChange}
+                    handleClick = {this.handleSubmit}
+                    loginMessage = {this.props.loginMessage}
                     />
                     <br/>
                     <p>No Account yet? Click <Link to= '/register'>here to register</Link></p>

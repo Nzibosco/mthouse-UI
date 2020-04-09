@@ -1,14 +1,22 @@
 import {combineReducers} from 'redux'
 import { registrationReducer} from './registrationReducer'
+import { loginReducer } from './loginReducer'
 
 export interface IRegisterState {
     registerMessage: string
 }
 
+export interface ILoginState {
+    loginMessage: string,
+    member: any
+}
+
 export interface IState {
-    registerState: IRegisterState
+    registerState: IRegisterState,
+    memberState: ILoginState
 }
 
 export const state = combineReducers<IState>({
-    registerState: registrationReducer
+    registerState: registrationReducer,
+    memberState: loginReducer
 })

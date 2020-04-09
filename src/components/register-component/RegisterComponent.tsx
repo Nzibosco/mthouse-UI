@@ -175,7 +175,7 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
                         </FormRow>
 
                         <FormGroup>
-                        <Label name='Select Role: ' inputId='role' />
+                        <Label name='Select Role: &nbsp;' inputId='role' />
                         <select id='role' onChange = {this.handleSelect}>
                             {roles.map(role => {
                                 return (
