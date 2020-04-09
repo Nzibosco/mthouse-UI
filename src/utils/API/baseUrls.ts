@@ -1,5 +1,5 @@
 import Axios from 'axios'
 
 export const registerAPI = Axios.create({
-    baseURL: 'mthouse.com',
+    baseURL: 'http://localhost:8080/members',
 });

@@ -9,6 +9,7 @@ export const registerTypes = {
 export const register = (member: any) => async (dispatch: any) => {
 
     registerAPI.post('', member).then(res => {
+        console.log(res)
         if (res.status === 200) {
             console.log(res.data);
             dispatch({

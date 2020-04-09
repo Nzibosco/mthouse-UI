@@ -19,11 +19,11 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
             fname: '',
             lname: '',
             email: '',
-            phone: '',
+            phone: 0,
             address: '',
             password: '',
             role: '',
-            contribution: ''
+            contribution: 0
 
         }
     }
@@ -37,10 +37,9 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
     }
 
     handleSelect = (event:any) => {
-        event.preventDefault();
-        const {className, value} = event.target;
         this.setState({
-            [className]: value
+            ...this.state,
+            role: event.target.value
         })
     }
 
@@ -50,11 +49,11 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
             first_name: this.state.fname,
             last_name: this.state.lname,
             email: this.state.email,
-            phone: this.state.phone,
+            phone: parseInt(this.state.phone),
             address: this.state.address,
             password: this.state.password,
             member_role: this.state.role,
-            initial_contribution: this.state.contribution
+            initial_contribution: parseInt(this.state.contribution)
         }; 
 
         this.props.register(member);
@@ -77,7 +76,7 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
 
     render() {
 
-        let roles = ['ADMIN', 'ACCOUNTANT', 'SECRETARY', 'PRESIDENT', 'SOCIAL', 'FINANCE', 'AUDITOR', 'LOAN', 'OPERATIONS', 'MEMBER']
+        let roles = ['Select role...', 'ADMIN', 'ACCOUNTANT', 'SECRETARY', 'PRESIDENT', 'SOCIAL', 'FINANCE', 'AUDITOR', 'LOAN', 'OPERATIONS', 'MEMBER']
 
         return (
             <div className = 'jumbotron'>
@@ -171,10 +170,10 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
 
                         <FormGroup>
                         <Label name='Select Role: ' inputId='role' />
-                        <select id='role'>
+                        <select id='role' onChange = {this.handleSelect}>
                             {roles.map(role => {
                                 return (
-                                    <option className = 'role' value={role} onChange = {this.handleSelect}>{role}</option>
+                                    <option className = 'role' value={role}>{role}</option>
                                 )
                             })}
 
