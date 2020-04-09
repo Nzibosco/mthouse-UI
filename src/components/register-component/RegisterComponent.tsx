@@ -8,7 +8,8 @@ import Button from '../../utils/form tools/Button'
 import FormRow from '../../utils/form tools/FormRow'
 
 interface IMemberProps {
-    register: (member:any) => void
+    register: (member:any) => void,
+    registerMessage: string
 }
 
 export class RegisterComponent extends React.Component<IMemberProps, any> {
@@ -200,6 +201,8 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
                         disabled= {!this.state.fname || !this.state.lname || !this.state.email || !this.state.phone || !this.state.password}
                         />
                     </Form>
+                    <br/>
+                    <h4 className = 'text-danger'>{this.props.registerMessage}</h4>
                 </Jumbotron>
             </div>
         )

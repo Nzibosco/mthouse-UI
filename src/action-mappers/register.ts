@@ -8,7 +8,7 @@ export const registerTypes = {
 
 export const register =  (member:any) => async (dispatch:any) => {
 
-    registerAPI.post(member).then(res => {
+    registerAPI.post('',member).then(res => {
         if(res.status === 200){
             console.log(res.data);
             dispatch({
@@ -27,6 +27,16 @@ export const register =  (member:any) => async (dispatch:any) => {
             })
             
         }
+    }).catch(err => {
+        console.log('Register API failed');
+        console.log(err);
+        
+        dispatch({
+            type: registerTypes.FAIL_REGISTRATION_FAIL,
+            payload: {
+                registerMessage: 'Registration failed. Try again soon'
+            }
+        })
     })
 
 }
