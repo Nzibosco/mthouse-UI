@@ -37,22 +37,22 @@ export class NavbarComponent extends React.Component<INavProps, any> {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto" id="nav-list">
                             <li className="nav-item">
-                                <Link to="">Members</Link></li>
+                                <Link to="/members">Members</Link></li>
                             <li className="nav-item">
-                                <Link to="" >Contributions</Link></li>
+                                <Link to="/contributions" >Contributions</Link></li>
                             <li className="nav-item">
-                                <Link to="" >Loans</Link></li>
+                                <Link to="/loans" >Loans</Link></li>
                             <li className="nav-item">
-                                <Link to="" >Fine</Link>
+                                <Link to="/fine" >Fine</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="" >Repayment</Link></li>
+                                <Link to="/repayment" >Repayment</Link></li>
                             <li className="nav-item">
-                                <Link to="" >Documents</Link></li>
+                                <Link to="/repayment" >Documents</Link></li>
                             <li className="nav-item">
-                                <Link to="" >Accounting</Link></li>
+                                <Link to="/accounting" >Accounting</Link></li>
                             <li className="nav-item">
-                                <Link to="" >Meetings</Link></li>
+                                <Link to="/meeting" >Meetings</Link></li>
                             <li className="nav-item">
                                 <Link to="" >Admin</Link></li>
                         </ul>

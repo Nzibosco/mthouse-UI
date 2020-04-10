@@ -75,3 +75,14 @@ padding-top: 15%;
 #login, #logout {
   padding-left: 10px;
 }
+
+#members-table {
+  overflow-x: auto;
+}
+
+#members {
+  font-size: small;
+}
+#member-tableHead {
+  width: 99%;
+}
