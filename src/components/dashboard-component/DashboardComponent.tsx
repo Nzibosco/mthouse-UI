@@ -2,6 +2,7 @@ import React from 'react'
 import Jumbotron from '../../utils/jumbotron/Jumbotron'
 import Row from '../../utils/row/Row'
 import Card from '../../utils/card/Card'
+import Wrapper from '../../utils/Wrapper'
 
 
 export class DashboardComponent extends React.Component <any, any> {
@@ -9,8 +10,9 @@ export class DashboardComponent extends React.Component <any, any> {
 
     render(){
         return (
-            <Jumbotron>
-                <Row>
+            <Wrapper>
+            <Jumbotron id = 'dashboard'>
+                <Row className = 'wrapper'>
                     <Card cardTitle = 'Contribution' cardProperties = ' col-sm-4'>
                         <h1>Rwf ...</h1>
                     </Card>
@@ -22,7 +24,7 @@ export class DashboardComponent extends React.Component <any, any> {
                     </Card>
                     </Row>
                     <br/>
-                    <Row>
+                    <Row className = 'wrapper'>
                     <Card cardTitle = 'Repayments' cardProperties = ' col-sm-4'>
                         <h1>Rwf ...</h1>
                     </Card>
@@ -34,6 +36,7 @@ export class DashboardComponent extends React.Component <any, any> {
                     </Card>
                 </Row>
             </Jumbotron>
+            </Wrapper>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Jumbotron from '../../utils/jumbotron/Jumbotron'
 import Card from '../../utils/card/Card'
+import Wrapper from '../../utils/Wrapper'
 
 interface IMemberDetailsProps {
     member: any
@@ -14,6 +15,7 @@ export class MemberDetailsComponent extends React.Component<IMemberDetailsProps,
     render() {
         if (this.props.member != null) {
             return (
+                <Wrapper>
                 <Jumbotron>
                     <Card>
                         <p><strong>First name:</strong> {' ' + this.props.member.first_name}</p>
@@ -27,12 +29,13 @@ export class MemberDetailsComponent extends React.Component<IMemberDetailsProps,
                         <p><strong>Current Loan balance:</strong> {' ' + this.props.member.loan_balance}</p>
                     </Card>
                 </Jumbotron>
+                </Wrapper>
             )
         } else {
             return (
-                <>
+                <Wrapper>
                     <h1>No data to display</h1>
-                </>
+                </Wrapper>
             )
         }
 

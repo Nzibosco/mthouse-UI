@@ -6,7 +6,7 @@ import React from 'react'
 
 const Form = (props:any) => {
     return (
-        <form id= {props.id}>          
+        <form id= {props.id} className = {props.className}>          
             {props.children}
         </form>
     )

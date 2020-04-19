@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import MiniDrawer from './Nav'
 
 interface INavProps {
 }
@@ -10,6 +11,13 @@ export class NavbarComponent extends React.Component<INavProps, any> {
     }
 
     render() {
+        if(true){
+            return (
+                <>
+                <MiniDrawer/>
+                </>
+            )
+        } else {
         return (
             <>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -62,5 +70,6 @@ export class NavbarComponent extends React.Component<INavProps, any> {
                 </nav>
             </>
         )
+        }
     }
 }

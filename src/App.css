@@ -86,3 +86,8 @@ padding-top: 15%;
 #member-tableHead {
   width: 99%;
 }
+
+/* */
+.wrapper {
+  padding-left: 20px;
+}

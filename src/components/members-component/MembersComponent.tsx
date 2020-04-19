@@ -22,8 +22,9 @@ export class MembersComponent extends React.Component<IMembersProps, any> {
     render() {
         if (this.props.members != null) {
             return (
-                <Jumbotron>
-                    <Card id='members-table'>
+                <Jumbotron className = 'wrapper'>
+                    <div className = 'wrapper'>
+                    <Card id='members-table' cardProperties = ''>
                         <table className='table table-dark' id='members'>
                             <thead>
                                 <tr id = 'member-tableHead'>
@@ -53,7 +54,8 @@ export class MembersComponent extends React.Component<IMembersProps, any> {
                             </tbody>
                         </table>
                     </Card>
-                    <h4 className='text-danger'>{this.props.membersMessage}</h4>
+                    <h4 className='text-danger wrapper'>{this.props.membersMessage}</h4>
+                    </div>
                 </Jumbotron>
 
             )

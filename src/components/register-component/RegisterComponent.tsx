@@ -7,6 +7,7 @@ import Input from '../../utils/form tools/Input'
 import FormGroup from '../../utils/form tools/FormGroup'
 import Button from '../../utils/form tools/Button'
 import FormRow from '../../utils/form tools/FormRow'
+import Wrapper from '../../utils/Wrapper';
 
 interface IMemberProps {
     register: (member:any) => void,
@@ -85,11 +86,12 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
         let roles = ['Select role...', 'ADMIN', 'ACCOUNTANT', 'SECRETARY', 'PRESIDENT', 'SOCIAL', 'FINANCE', 'AUDITOR', 'LOAN', 'OPERATIONS', 'MEMBER']
 
         return (
+            <Wrapper>
             <div className = 'jumbotron'>
                 <Jumbotron id = 'register-jumbotron'>
-                    <h2>Enter your details below:</h2>
+                    <h2 className = 'wrapper'>Enter your details below:</h2>
 
-                    <Form>
+                    <Form className = 'wrapper'>
                         <FormRow>
                         <FormGroup size='col-4'>
                         <Label name='First Name' inputId='fname' />
@@ -207,9 +209,10 @@ export class RegisterComponent extends React.Component<IMemberProps, any> {
                         />
                     </Form>
                     <br/>
-                    <h4 className = 'text-danger' id = 'register-message'>{this.props.registerMessage}</h4>
+                    <h4 className = 'text-danger wrapper' id = 'register-message'>{this.props.registerMessage}</h4>
                 </Jumbotron>
             </div>
+            </Wrapper>
         )
     }
 }
