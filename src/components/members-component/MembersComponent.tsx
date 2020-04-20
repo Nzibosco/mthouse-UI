@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from '../../utils/card/Card';
 import Jumbotron from '../../utils/jumbotron/Jumbotron';
+import Row from '../../utils/row/Row';
 
 interface IMembersProps {
     getMembers: () => void,
@@ -23,8 +24,8 @@ export class MembersComponent extends React.Component<IMembersProps, any> {
         if (this.props.members != null) {
             return (
                 <Jumbotron className = 'wrapper'>
-                    <div className = 'wrapper'>
-                    <Card id='members-table' cardProperties = ''>
+                    <Jumbotron className = 'wrapper'>
+                    <Jumbotron id='members-table' cardProperties = ''>
                         <table className='table table-dark' id='members'>
                             <thead>
                                 <tr id = 'member-tableHead'>
@@ -53,9 +54,9 @@ export class MembersComponent extends React.Component<IMembersProps, any> {
                                 }
                             </tbody>
                         </table>
-                    </Card>
+                    </Jumbotron>
                     <h4 className='text-danger wrapper'>{this.props.membersMessage}</h4>
-                    </div>
+                    </Jumbotron>
                 </Jumbotron>
 
             )
