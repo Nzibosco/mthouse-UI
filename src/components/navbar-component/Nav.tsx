@@ -59,6 +59,9 @@ const useStyles = makeStyles((theme: Theme) =>
         duration: theme.transitions.duration.enteringScreen,
       }),
     },
+    drawerPaper: {
+      width: drawerWidth,
+    },
     menuButton: {
       marginRight: 36,
     },
@@ -155,7 +158,7 @@ export default function MiniDrawer() {
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-  
+
   // displaying member profile on a normal size computer screen
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -170,7 +173,7 @@ export default function MiniDrawer() {
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}><Link to = '/logout'>Logout</Link></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link to='/logout'>Logout</Link></MenuItem>
     </Menu>
   );
 
@@ -225,7 +228,7 @@ export default function MiniDrawer() {
             MT House
           </Typography>
           <div className={classes.grow} />
-          
+
           {
             // space for memeber profile
           }
@@ -255,46 +258,53 @@ export default function MiniDrawer() {
         </Toolbar>
       </AppBar>
       <Drawer
-variant="permanent"
-className={clsx(classes.drawer, {
-  [classes.drawerOpen]: open,
-  [classes.drawerClose]: !open,
-})}
-classes={{
-  paper: clsx({
-    [classes.drawerOpen]: open,
-    [classes.drawerClose]: !open,
-  }),
-}}
->
-<div className={classes.toolbar}>
-  <IconButton onClick={handleDrawerClose}>
-    {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-  </IconButton>
-  {renderMobileMenu}
-  {renderMenu}
-</div>
-<Divider />
-<List>
-  <ListItem><ListItemIcon><DashboardIcon /></ListItemIcon><Link to='dashboard'><ListItemText primary='Dashboard' /></Link></ListItem>
-  <ListItem><ListItemIcon><SupervisorAccountIcon /></ListItemIcon><ListItemText primary='Members' /></ListItem>
-  <ListItem><ListItemIcon><AccountBalanceIcon /></ListItemIcon><ListItemText primary='Contribution' /></ListItem>
-  <ListItem><ListItemIcon><CardGiftcardIcon /></ListItemIcon><ListItemText primary='Loans' /></ListItem>
-  <ListItem><ListItemIcon><MonetizationOnIcon /></ListItemIcon><ListItemText primary='Fines' /></ListItem>
-  <ListItem><ListItemIcon><ReceiptIcon /></ListItemIcon><ListItemText primary='Repayments' /></ListItem>
-  <ListItem><ListItemIcon><AccountTreeIcon /></ListItemIcon><ListItemText primary='Accounting' /></ListItem>
-</List>
-<Divider />
-<List>
-  <ListItem><ListItemIcon><VerifiedUserIcon /></ListItemIcon><ListItemText primary='Admin' /></ListItem>
-  <ListItem><ListItemIcon><MeetingRoomIcon /></ListItemIcon><ListItemText primary='Meetings' /></ListItem>
-  <ListItem><ListItemIcon><MenuBookIcon /></ListItemIcon><ListItemText primary='Documents' /></ListItem>
-</List>
-<Divider />
-<List>
-  <ListItem><ListItemIcon><PersonAddIcon /></ListItemIcon><Link to='register'><ListItemText primary='Add member' /></Link></ListItem>
-</List>
-</Drawer>
+        // variant="permanent"
+        // className={clsx(classes.drawer, {
+        //   [classes.drawerOpen]: open,
+        //   [classes.drawerClose]: !open,
+        // })}
+        // classes={{
+        //   paper: clsx({
+        //     [classes.drawerOpen]: open,
+        //     [classes.drawerClose]: !open,
+        //   }),
+        // }}
+        className={classes.drawer}
+        variant="persistent"
+        anchor="left"
+        open={open}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+      >
+        <div className={classes.toolbar}>
+          <IconButton onClick={handleDrawerClose}>
+            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          </IconButton>
+          {renderMobileMenu}
+          {renderMenu}
+        </div>
+        <Divider />
+        <List>
+          <ListItem><ListItemIcon><DashboardIcon /></ListItemIcon><Link to='dashboard'><ListItemText primary='Dashboard' /></Link></ListItem>
+          <ListItem><ListItemIcon><SupervisorAccountIcon /></ListItemIcon><ListItemText primary='Members' /></ListItem>
+          <ListItem><ListItemIcon><AccountBalanceIcon /></ListItemIcon><ListItemText primary='Contribution' /></ListItem>
+          <ListItem><ListItemIcon><CardGiftcardIcon /></ListItemIcon><ListItemText primary='Loans' /></ListItem>
+          <ListItem><ListItemIcon><MonetizationOnIcon /></ListItemIcon><ListItemText primary='Fines' /></ListItem>
+          <ListItem><ListItemIcon><ReceiptIcon /></ListItemIcon><ListItemText primary='Repayments' /></ListItem>
+          <ListItem><ListItemIcon><AccountTreeIcon /></ListItemIcon><ListItemText primary='Accounting' /></ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem><ListItemIcon><VerifiedUserIcon /></ListItemIcon><ListItemText primary='Admin' /></ListItem>
+          <ListItem><ListItemIcon><MeetingRoomIcon /></ListItemIcon><ListItemText primary='Meetings' /></ListItem>
+          <ListItem><ListItemIcon><MenuBookIcon /></ListItemIcon><ListItemText primary='Documents' /></ListItem>
+        </List>
+        <Divider />
+        <List>
+          <ListItem><ListItemIcon><PersonAddIcon /></ListItemIcon><Link to='register'><ListItemText primary='Add member' /></Link></ListItem>
+        </List>
+      </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
       </main>
