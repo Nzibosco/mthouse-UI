@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-const MyModal = (props:any) => {
+const MyModal = (props: any) => {
   const {
     buttonLabel,
     className
@@ -15,9 +15,9 @@ const MyModal = (props:any) => {
     <div>
       <Button color="danger" onClick={toggle}>{props.modalBtn}</Button>
       <Modal isOpen={modal} toggle={toggle} className={className} backdrop='static'>
-  <ModalHeader toggle={toggle}>{props.title}</ModalHeader>
+        <ModalHeader toggle={toggle}>{props.title}</ModalHeader>
         <ModalBody>
-         {props.body}
+          {props.body}
         </ModalBody>
         <ModalFooter>
           {props.footer}
